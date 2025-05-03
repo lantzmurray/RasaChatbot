@@ -8,7 +8,7 @@ This assistant simulates a virtual banking experience using Rasa. It supports ch
 ## ⚙️ Features
 - Balance Inquiry
 - Transaction History
-- Money Transfer via Form
+- Money Transfer via Form - Broken :-(
 - Card Loss Reporting via Form
 - Address & PIN Updates
 - Fallback Handling
