@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment
+venv/
+.env/
+.rasa/
+
+# Rasa model artifacts
+models/
+*.tar.gz
+
+# Logs and misc
+*.log
+*.db

@@ -1,0 +1,21 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "change_pin",
+  "3": "check_balance",
+  "4": "check_sufficient_funds",
+  "5": "deny",
+  "6": "fallback",
+  "7": "goodbye",
+  "8": "greet",
+  "9": "mood_great",
+  "10": "mood_unhappy",
+  "11": "open_account",
+  "12": "report_lost_card",
+  "13": "request_statement",
+  "14": "talk_to_human",
+  "15": "thank_you",
+  "16": "transaction_history",
+  "17": "transfer_money",
+  "18": "update_address"
+}

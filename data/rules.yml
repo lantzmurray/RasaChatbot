@@ -1,0 +1,35 @@
+version: "3.1"
+
+rules:
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: action_greet
+
+- rule: Start transfer money form
+  steps:
+  - intent: transfer_money
+  - action: transfer_money_form
+  - active_loop: transfer_money_form
+
+- rule: Start card replacement form
+  steps:
+  - intent: report_lost_card
+  - action: card_replacement_form
+  - active_loop: card_replacement_form
+
+- rule: Submit transfer money form
+  condition:
+  - active_loop: transfer_money_form
+  steps:
+  - action: transfer_money_form
+  - active_loop: null
+  - action: action_transfer_confirm
+
+- rule: Submit card replacement form
+  condition:
+  - active_loop: card_replacement_form
+  steps:
+  - action: card_replacement_form
+  - active_loop: null
+  - action: action_report_lost_card_confirm

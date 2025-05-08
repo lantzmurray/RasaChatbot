@@ -1,0 +1,99 @@
+version: '3.1'
+
+intents:
+  - greet
+  - check_balance
+  - transfer_money
+  - pay_bill
+  - report_lost_card
+  - transaction_history
+  - request_statement
+  - talk_to_human
+  - goodbye
+  - thank you
+
+entities:
+  - amount
+  - person
+  - bill_type
+  - month
+  - address
+
+slots:
+  amount:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: amount
+  person:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: person
+  bill_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: bill_type
+  month:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: month
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: address
+
+forms:
+  transfer_money_form:
+    required_slots:
+      - amount
+      - person
+  card_replacement_form:
+    required_slots:
+      - person
+      - address
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+
+  utter_check_balance:
+    - text: "Your current account balance is $1,245.67."
+
+  utter_transfer_money:
+    - text: "Got it. I’ve scheduled your transfer."
+
+  utter_pay_bill:
+    - text: "Your bill has been paid successfully."
+
+  utter_report_lost_card:
+    - text: "Your card has been locked. A replacement is on the way."
+
+  utter_transaction_history:
+    - text: "Here are your last three transactions: $50 at Amazon, $12 at Starbucks, $100 at Walmart."
+
+  utter_request_statement:
+    - text: "Your requested statement has been emailed to you."
+
+  utter_talk_to_human:
+    - text: "Connecting you to a live representative. Please hold."
+
+  utter_goodbye:
+    - text: "Good bye."
+
+  utter_thank_you:
+    - text: "You're welcome!"
+
+actions:
+  - action_greet
+  - action_check_balance
+  - action_transfer_confirm
+  - action_pay_bill
+  - action_report_lost_card_confirm
+  - action_transaction_history
+  - action_request_statement
+  - action_talk_to_human
+  - action_goodbye
