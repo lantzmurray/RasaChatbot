@@ -24,6 +24,11 @@ nlu:
     - move 200 to savings
     - I want to send money to Alex
     - make a money transfer
+    - I want to send my wife money
+    - I need to give money for my son
+    - I want to send money to my daughter
+    - Lets send Angela 1000 dollars 
+    
 
 - intent: pay_bill
   examples: |

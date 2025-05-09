@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 assistant_id: 20250426-221423-charitable-fork
 language: en
 
@@ -55,7 +54,6 @@ policies:
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
-=======
 assistant_id: 20250426-221423-charitable-fork
 language: en
 
@@ -99,4 +97,3 @@ pipeline:
     threshold: 0.3               # If confidence of top intent is below 0.3, trigger fallback
     ambiguity_threshold: 0.1     # If top two intents are very close, trigger fallback
 
->>>>>>> 3274c8541c748069b88a5aab51d9fd1edcfee580
