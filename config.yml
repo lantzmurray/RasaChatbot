@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 assistant_id: 20250426-221423-charitable-fork
 language: en
 
@@ -54,3 +55,48 @@ policies:
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
+=======
+assistant_id: 20250426-221423-charitable-fork
+language: en
+
+# No configuration for the NLU pipeline was provided. 
+# The following default pipeline was used to train your model.
+# If you'd like to customize it, uncomment and adjust the pipeline.
+# See https://rasa.com/docs/rasa/tuning-your-model for more information.
+
+pipeline:
+  # Split user input into words (basic tokenization based on spaces)
+  - name: WhitespaceTokenizer
+
+  # Detect patterns like emails, numbers, account IDs using regular expressions
+  - name: RegexFeaturizer
+
+  # Extract simple features about words (like casing, position, punctuation)
+  - name: LexicalSyntacticFeaturizer
+
+  # Convert words into numerical counts (bag-of-words model)
+  - name: CountVectorsFeaturizer
+
+  # (Optional) Create character-level features (good for misspellings)
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+  # Main model: Jointly predict intent and extract entities
+  - name: DIETClassifier
+    epochs: 100
+
+  # Map extracted entity synonyms to canonical forms (e.g., "cell phone" → "mobile")
+  - name: EntitySynonymMapper
+
+  # Select the best matching response if using retrieval-based intents (good for FAQs)
+  - name: ResponseSelector
+    epochs: 100
+
+  # Handle low confidence or ambiguous predictions (fallback to default action)
+  - name: FallbackClassifier
+    threshold: 0.3               # If confidence of top intent is below 0.3, trigger fallback
+    ambiguity_threshold: 0.1     # If top two intents are very close, trigger fallback
+
+>>>>>>> 3274c8541c748069b88a5aab51d9fd1edcfee580
